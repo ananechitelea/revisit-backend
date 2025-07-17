@@ -13,6 +13,11 @@ app.use('/api/auth',authRoutes)
 const sectionsRoutes = require("./routes/sections");
 app.use("/api/sections", sectionsRoutes);
 
+const cardsRoutes = require("./routes/cards");
+app.use("/api/cards", cardsRoutes);
+
+app.use("/uploads", express.static("uploads"));
+
 app.get("/", (req, res) => {
   res.send("Revisit backend is running...");
 });
